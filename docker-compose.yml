@@ -1,0 +1,32 @@
+---
+version: "2.1"
+services:
+  swag:
+    image: ghcr.io/linuxserver/swag
+    container_name: swag
+    cap_add:
+      - NET_ADMIN
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+      - SUBDOMAINS=node-recorder
+      - URL=duckdns.org
+      - VALIDATION=http
+      - DUCKDNSTOKEN=1bfa4f59-9d2a-45ad-a600-dd2f1d789d36 #optional
+      - ONLY_SUBDOMAINS=true #optional
+      - STAGING=false #optional
+    volumes:
+      - ./config:/config
+    ports:
+      - 443:443
+      - 80:80 #optional
+    restart: unless-stopped
+
+  node-recorder:
+    image: node-recorder:v1
+    container_name: node-recorder
+    volumes:
+      - ./messages:/app/public/messages
+    restart: unless-stopped
+    

@@ -1,0 +1,2 @@
+2021/04/25 00:00:31 [error] 473#473: *1 user "asdkhsak" was not found in "/config/nginx/.htpasswd", client: 181.228.186.249, server: node-recorder.duckdns.org, request: "GET / HTTP/2.0", host: "node-recorder.duckdns.org"
+2021/04/25 00:00:34 [error] 473#473: *1 user "dljkajdslk" was not found in "/config/nginx/.htpasswd", client: 181.228.186.249, server: node-recorder.duckdns.org, request: "GET / HTTP/2.0", host: "node-recorder.duckdns.org"
